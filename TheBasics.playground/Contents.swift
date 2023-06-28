@@ -41,7 +41,7 @@ let maxValue = UInt8.max // maxValue is equal to 255, and is of type UInt8
 let meaningOfLife = 42
 // meaningOfLife is inferred to be of type Int
 
-let pi = 3.14159
+//let pi = 3.14159
 // pi is inferred to be of type Double
 
 let anotherPi = 3 + 0.14159
@@ -66,4 +66,65 @@ let justOverOneMillion = 1_000_000.000_000_1
 // Int8 can't store a number larger than its maximum value,
 // and so this will also report an error
 
+let twoThousand: UInt16 = 2_000
+let one: UInt8 = 1
+let twoThousandsAndOne = twoThousand + UInt16(one)
+
+let three = 3
+let pointOneFourOneFiveNine = 0.14159
+let pi = Double(three) + pointOneFourOneFiveNine
+// pi equals 3.14159, and is inferred to be of type Double
+
+let integerPi = Int(pi)
+// integerPi equals 3, and is inferred to be of type Int
+
+typealias AudioSample = UInt16
+
+var maxAmplitudeFound = AudioSample.min
+// maxAmplitudeFound is now 0
+
+let orangesAreOrange = true
+let turnipsAreDelicious = false
+
+if turnipsAreDelicious {
+    print("Mmm, tasty turnips!")
+} else {
+    print("Eww, turnips are horrible.")
+}
+// Prints "Eww, turips are horrible."
+
+//let i = 1
+//if i {
+//    // this example will not compile, and will report an error
+//}
+
+let i = 1
+if i == 1 {
+    // this example will compile succesfully
+}
+
+let http404Error = (404, "Not Found")
+// http404Error is of type (Int, String), and equals (404, "Not Found")
+
+let (statusCode, statusMessage) = http404Error
+print("The status code is \(statusCode)")
+// Prints "The status code is 404"
+print("The status message is \(statusMessage)")
+// Prints "The status message is Not Found"
+
+let (justTheStatusCode, _) = http404Error
+print("The status code is \(justTheStatusCode)")
+// Prints "The status code is 404"
+
+print("The status code is \(http404Error.0)")
+// Prints "The status code is 404"
+print("The status message is \(http404Error.1)")
+// Prints "The status message is Not Found"
+
+let http200Status = (statusCode: 200, description: "OK")
+
+print("The status code is \(http200Status.statusCode)")
+// Prints "The status code is 200"
+print("The status message is \(http200Status.description)")
+// Prints "The status message is OK"
 
