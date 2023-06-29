@@ -128,3 +128,118 @@ print("The status code is \(http200Status.statusCode)")
 print("The status message is \(http200Status.description)")
 // Prints "The status message is OK"
 
+let possibleNumber = "123"
+let convertedNumber = Int(possibleNumber)
+// convertedNumber is iferred to be of type "Int?", or "optional Int"
+
+var serverResponseCode: Int? = 404
+// serverResponseCode contains an actual Int value of 404
+serverResponseCode = nil
+// serverResponseCode now contains no value
+
+var surveyAnswer: String?
+// surveyAnswer is automatically set to nil
+
+if convertedNumber != nil {
+    print("convertedNumber contains some integer value.")
+}
+// Prints "convertedNumber contains some integer value."
+
+if convertedNumber != nil {
+    print("convertedNumber has an integer value of \(convertedNumber).")
+}
+// Prints "convertedNumber has an integer value of 123."
+
+if let actualNumber = Int(possibleNumber) {
+    print("The string \"\(possibleNumber)\" has an integer value of \(actualNumber)")
+} else {
+    print("The string \"\(possibleNumber)\" couldn't be converted to an integer")
+}
+// Prints "The string "123" has an integer value of 123"
+
+let myNubmer = Int(possibleNumber)
+// Here, myNumber is an optional integer
+if let myNubmer = myNubmer {
+    // Here, myNumber is a non-optional integer
+    print("My nubmer is \(myNubmer)")
+}
+// Prints "My number is 123"
+
+if let myNubmer {
+    print("My number is \(myNubmer)")
+}
+// Prints "My number is 123"
+
+if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+// Prints "4 < 42 < 100"
+
+if let firstNumber = Int("4") {
+    if let secondNumber = Int("42") {
+        print("\(firstNumber) < \(secondNumber) < 100")
+    }
+}
+
+let possibleString: String? = "An optional string."
+let forcedString: String = possibleString! // requires an exclamation point
+
+let assumedString: String! = "An implicitly unwrapped optional string."
+let implicitString: String = assumedString // no need for an exclamation point
+
+let optionalString = assumedString
+// The type of optionalString is "String?" and assumedString isn't force-unwrapped.
+
+if assumedString != nil {
+    print(assumedString!)
+}
+// Prints "An implicitly unwrapped optional string."
+
+if  let definiteString = assumedString {
+    print(definiteString)
+}
+// Prints "An implicitly unwrapped optional string."
+
+func canThrowAnError() throws {
+    // this function may or may not throw an error
+}
+
+do {
+    try canThrowAnError()
+    // no error was thrown
+} catch {
+    // an error was thrown
+}
+
+//func makeASandich() throws {
+//    // ...
+//}
+//
+//do {
+//    try makeASandich()
+//    eatASandwich()
+//} catch SandwichError.outOfCleanDishes {
+//    washDishes()
+//} catch SandwichError.missingIngredients(let ingredients) {
+//    buyGroceries(ingredients)
+//}
+
+let age = -3
+assert(age >= 0, "A person's age can't be less than zero.")
+// This assertion fails because -3 isn't >= 0.
+
+assert(age >= 0)
+
+if age > 10 {
+    print("You can ride the roller-coaster of the ferris wheel.")
+} else if age >= 0 {
+    print("You can ride the ferris wheel.")
+} else {
+    assertionFailure("A person's age can't be less than zero.")
+}
+
+// In the implementation of a subscript...
+//precondition(index > 0, "Index must be grater than zero.")
+
+
+
