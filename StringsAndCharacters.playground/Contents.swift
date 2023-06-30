@@ -110,3 +110,25 @@ print(goodStart + end)
 // two
 // three
 
+let multiplier = 3
+let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
+// message is "3 times 2.5 is 7.5"
+
+print(#"Write an interpolated string in Swift using \(multiplier)."#)
+// Prints "Write an interpolated string in Swift using \(multiplier)."
+
+print(#"6 times 7 is \#(6 * 7)."#)
+// Prints "6 times 7 is 42."
+
+let eAcute: Character = "\u{E9}"                              // é
+let combinedEAcute: Character = "\u{65}\u{301}"               // e followed by '
+// eacute is é, combideEAcute is é
+
+let precomposed: Character = "\u{D55C}"                       // 한
+let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"        // ᄒ, ᅡ, ᆫ
+// precomosed is 한, decomposed is 한
+
+let enclosedEAcute: Character = "\u{E9}\u{20DD}"
+// enclosedEacute is é⃝
+let regianalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
+// regionalIndicatorForUS is 🇺🇸
